@@ -1,0 +1,16 @@
+{
+    "name": "leverage-php/lambda-skeleton",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Test\\": "test/"
+        }
+    },
+    "require": {
+        "bref/bref": "^1.7"
+    },
+    "require-dev": {
+        "leverage-php/toolchain": "^1.2"
+    }
+}
