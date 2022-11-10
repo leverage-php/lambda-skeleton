@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  php:
+    container_name: leverage-lambda-skeleton-php
+    image: architechlabs/php
+    user: ${UID}:${GID}
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+
+  serverless:
+    image: architechlabs/serverless
+    volumes:
+      - .:/app
+    env_file:
+      - .env
