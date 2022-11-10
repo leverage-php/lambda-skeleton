@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker-compose run -it --rm php php vendor/bin/bref local default "$@"
