@@ -1,0 +1,27 @@
+service: app
+
+provider:
+    name: aws
+    region: us-east-1
+    runtime: provided.al2
+
+plugins:
+    - ./vendor/bref/bref
+
+functions:
+    default:
+        handler: index.php
+        name: task-${sls:stage}
+        layers:
+            - ${bref:layer.php-81}
+        timeout: 30
+
+# Exclude files from deployment
+package:
+    patterns:
+        - '!.github/**'
+        - '!bin/**'
+        - '!docker-compose.yml'
+        - '!node_modules/**'
+        - '!package*.json'
+        - '!test/**'
